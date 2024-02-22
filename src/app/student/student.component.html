@@ -1,0 +1,49 @@
+<br>
+
+<button (click)="changeMessage()">New Message</button>
+<p>{{parentItem}}</p>
+{{message}}
+<form [formGroup]="studentForm">
+    <div class="addform">
+        <label for="studentName">studentName</label>
+        <input type="text" name="studentName" id="studentName" formControlName="studentName">
+        <label for="studentId">studentId</label>
+        <input type="text" name="studentId" id="studentId" formControlName="studentId">
+        <label for="studentPhoneNumber">studentPhoneNumber</label>
+        <input type="text" name="studentPhoneNumber" id="studentPhoneNumber" formControlName="studentPhoneNumber">
+        <label for="course">course</label>
+        <input type="text" name="course" id="course" formControlName="course">
+        <label for="year">year</label>
+        <input type="text" name="year" id="year" formControlName="year">
+        <label for="country">country</label>
+        <input type="text" name="country" id="country" formControlName="country">
+        <button class="add-student" (click)="addNewStudent()" type="submit">Add Student</button>
+    </div>
+    <div class="deleteform">
+        <label for="studentIdDelete">studentId</label>
+        <input type="text" name="studentIdDelete" id="studentIdDelete" formControlName="studentId">
+        <button class="delete-student" (click)="deleteStudent()" type="submit">Delete Student</button>
+    </div>
+</form>
+<br>
+<br>
+<div class="panel-body">
+    <table class="table-latitude">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList">
+                <td>{{ student?.course }}</td>
+                <td>{{ student?.studentName }}</td>
+                <td>{{ student?.studentId }}</td>
+                <td>{{ student?.activeStatus }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,7 @@
+<form [formGroup]="loginform">
+    <label for="username">User Name</label>
+    <input type="text" id="username" formControlName="userName" />
+    <label for="password">Password</label>
+    <input type="text" id="password" formControlName="password" />
+    <button type="submit" (click)="login()">Login</button>
+</form>
